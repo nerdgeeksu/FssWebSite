@@ -1,9 +1,12 @@
 $(document).ready(function() {
 
 // process the form
-$('form').submit(function(event) {
+$('#connexionform').submit(function(event) {
+	
+	$(".ajax_spinner").remove();
+    $(".ajax_wait").remove();
 
-   var label = "<span class='ajax_spinner' align=center><img src='files/ispinner.gif'/> Loading </span>";
+   var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Loading </span>";
    $(".ajax_wait").after(label);
    
   // remove the past errors
@@ -53,7 +56,7 @@ $('form').submit(function(event) {
 
       } else {
 		  
-		  var label = "<span class='ajax_spinner' align=center><img src='files/ispinner.gif'/> Loading </span>";
+		  var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement</span>";
           $(".ajax_wait").after(label);
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
