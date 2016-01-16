@@ -2,10 +2,10 @@
 
 
   error_reporting(0);
-  define('MYSQL_HOSTNAME',  'localhost:3308');  /* hostname */
-  define('MYSQL_USERNAME',  'diopbach');       /* username */
-  define('MYSQL_PASSWORD',  'nabounanc1');   /* password */
-  define('MYSQL_DATABASE',  'fss-db'); /* database */
+  define('MYSQL_HOSTNAME',  'br-cdbr-azure-south-a.cloudapp.net:3306');  /* hostname */
+  define('MYSQL_USERNAME',  'b08ef2695088a5');       /* username */
+  define('MYSQL_PASSWORD',  '78fe9174');   /* password */
+  define('MYSQL_DATABASE',  'acsm_235174c19e8776'); /* database */
   /* Login successful the redirect to */
   define('SUCCESS_LOGIN_GOTO' ,'index.php');
  
@@ -39,7 +39,7 @@
 	
  try
 {
-	$db = new PDO('mysql:host=localhost:3308;dbname=fss-db', 'diopbach', 'nabounanc1');
+	$fssdb = new PDO('mysql:host='.MYSQL_HOSTNAME.';dbname='.MYSQL_DATABASE, MYSQL_USERNAME, MYSQL_PASSWORD);
 }
 catch (Exception $e)
 {

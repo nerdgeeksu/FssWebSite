@@ -23,8 +23,8 @@
         
 		<?php
 		
-		$db = new PDO('mysql:host=localhost:3308;dbname=fss-db', 'diopbach', 'nabounanc1');
-    $query=$db->prepare(" SELECT titre,description,contenu,news_image,nom_img,chemin_img FROM fss_news,fss_images where news_image=nom_img ");
+		
+    $query=$fssdb->prepare(" SELECT titre,description,contenu,news_image,nom_img,chemin_img FROM fss_news,fss_images where news_image=nom_img ");
     $query->execute();
 	
 		$i = 0;

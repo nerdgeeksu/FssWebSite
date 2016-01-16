@@ -170,8 +170,8 @@
               <a href="#" class="btn btn-default">Départements<i class="fa fa-fw fa-bank"></i></a>
               <ul class="list-unstyled text-center">
                 <?php
-				$db = new PDO('mysql:host=localhost:3308;dbname=fss-db', 'diopbach', 'nabounanc1');
-    $query=$db->prepare(" SELECT * FROM fss_departements ");
+				
+    $query=$fssdb->prepare(" SELECT * FROM fss_departements ");
     $query->execute();
 				
 				while($data=$query->fetch())

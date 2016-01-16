@@ -1,6 +1,6 @@
 <?php
 
-   
+   include("/includes/script/files/config.php");
    
    if($_GET['logout'] == true && isset($_GET['logout']))
    {
@@ -12,6 +12,7 @@
    elseif(!isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == false )
    {
 	   //include('signedindex.php');
+	   
 	   include('notsignedindex.php');
 	   
    }
