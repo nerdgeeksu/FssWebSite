@@ -60,7 +60,7 @@ $('#connexionform').submit(function(event) {
           $(".ajax_wait").after(label);
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
-		$('#connexion-modal').close();
+		$('#connexion-modal').modal('hide');
       }
     }
   });
@@ -130,7 +130,7 @@ $('#inscriptionform').submit(function(event) {
           $(".ajax_wait").after(label);
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
-		$('#inscription-modal').close();
+		$('#inscription-modal').modal('hide');
       }
     }
   });
