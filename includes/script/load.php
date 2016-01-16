@@ -6,8 +6,8 @@
 		  <?php
 
 		  
-	     $db = new PDO('mysql:host=localhost:3308;dbname=fss-db', 'diopbach', 'nabounanc1');
-    $query=$db->prepare(' SELECT * FROM fss_news ');
+	    
+    $query=$fssdb->prepare(' SELECT * FROM fss_news ');
     $query->execute();
 	   
 	   

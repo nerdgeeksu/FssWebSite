@@ -8,7 +8,7 @@
     <title>Faculté des Sciences de Sfax</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
@@ -23,6 +23,7 @@
      -->
     <link href="includes/script/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="includes/script/FssScript.js"></script>
+	<script type="text/javascript" src="includes/script/magic.js">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="includes/script/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -53,32 +54,48 @@
           </div>
           <div class="modal-body">
             <div id="container" class="container-fluid text-center">
-              <form action="" method="post" class="form-signin ajax_form">
-                <h2 class="form-signin-heading">Veuillez saisir vos identifiants</h2>
-                <label for="inputEmail" class="sr-only">Adresse mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse E-mail" required="" autofocus="">
-                <label for="inputPassword" class="sr-only">Mot de passe</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de Passe" required="">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="remember-me">Se souvenir de moi</label>
-                </div>
-                <button class="btn btn-block btn-lg btn-success" type="submit">Se Connecter</button>
-                <div class="ajax_notify" style="display:none; clear:both">Error : Invalid username or password. Please try again.
-                  <!--don't delete
-                  this div class="ajax_notify"-->
-                </div>
-                <ul>
-                  <li class="label status">
-                    <span class="ajax_wait">
-                      <!--don't delete this span class="ajax_wait"-->
-                    </span>
-                  </li>
-                </ul>
-                <div class="ajax_target">
-                  <!--don't delete this div class="ajax_target" -->
-                </div>
-              </form>
+             
+<div class="col-md-6 col-md-offset-3">
+
+  <!-- PAGE TITLE -->
+  <div class="page-header">
+    <h1><span class="glyphicon glyphicon-tower"></span> Submitting Forms with Angular</h1>
+  </div>
+
+  <!-- SHOW ERROR/SUCCESS MESSAGES -->
+  <div id="messages"></div>
+
+  <!-- FORM -->
+  <form>
+    <!-- NAME -->
+    <div id="name-group" class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" placeholder="Bruce Wayne">
+      <span class="help-block"></span>
+    </div>
+
+    <!-- SUPERHERO NAME -->
+    <div id="superhero-group" class="form-group">
+      <label>Superhero Alias</label>
+      <input type="text" name="superheroAlias" class="form-control" placeholder="Caped Crusader">
+      <span class="help-block"></span>
+    </div>
+
+	<span class="ajax_wait" align=center>
+        <!--don't delete this span class="ajax_wait"-->
+    </span>
+	
+    <!-- SUBMIT BUTTON -->
+    <button type="submit" class="btn btn-success btn-lg btn-block">
+      <span class="glyphicon glyphicon-flash"></span> Submit!
+    </button>
+	
+	
+	
+  </form>
+
+</div>
+
             </div>
           </div>
         </div>

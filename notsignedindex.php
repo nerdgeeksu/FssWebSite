@@ -1,13 +1,11 @@
 
 <?php 
 
-   include('includes/script/ajaxLoginModule.class.php');
-   $ajaxLoginModule = new ajaxLoginModule;
+   
    include('notsignedheader.php'); 
    include('includes/script/loadcarousel.php');
+   include('includes/script/load.php');
+   include('footer.php');
 
 ?>
     
-    
-          <?php include('includes/script/load.php'); ?>
-   <? include('footer.php');?>

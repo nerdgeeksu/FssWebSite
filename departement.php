@@ -1,7 +1,6 @@
 
 <?php
- include('includes/script/ajaxLoginModule.class.php');
-   $ajaxLoginModule = new ajaxLoginModule;
+ 
    
    // !isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == false || condition supplementaire
 
