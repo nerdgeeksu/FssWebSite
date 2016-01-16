@@ -3,7 +3,7 @@ $(document).ready(function() {
 // process the form
 $('form').submit(function(event) {
 
-   var label = "<span class='ajax_spinner' align=center><img src='ispinner.gif'/> Loading </span>";
+   var label = "<span class='ajax_spinner' align=center><img src='files/ispinner.gif'/> Loading </span>";
    $(".ajax_wait").after(label);
    
   // remove the past errors
@@ -24,7 +24,7 @@ $('form').submit(function(event) {
   // process the form
   $.ajax({
     type        : 'GET',
-    url         : 'connexionverif.php',
+    url         : 'includes/script/connexionverif.php',
     data        : formData,
     dataType    : 'json',
     success     : function(data) {
@@ -53,7 +53,7 @@ $('form').submit(function(event) {
 
       } else {
 		  
-		  var label = "<span class='ajax_spinner' align=center><img src='ispinner.gif'/> Loading </span>";
+		  var label = "<span class='ajax_spinner' align=center><img src='files/ispinner.gif'/> Loading </span>";
           $(".ajax_wait").after(label);
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
