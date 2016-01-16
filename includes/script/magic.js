@@ -65,7 +65,7 @@ $('#connexionform').submit(function(event) {
 		$('#connexion-modal').modal('hide');
 		
 					setTimeout(function(){
-				   window.location='http://fssheav.azurewebsites.net/index.php';
+				   window.location='http://fssheav.azurewebsites.net/signedindex.php';
 				}, 5000);
 	
       }
@@ -143,7 +143,7 @@ $('#connexionform').submit(function(event) {
 					$('#inscription-modal').modal('hide');
 					
 						setTimeout(function(){
-				   window.location='http://fssheav.azurewebsites.net/index.php';
+				   window.location='http://fssheav.azurewebsites.net/signedindex.php';
 				}, 5000);
 				
 					
