@@ -3,6 +3,7 @@
  
    
    // !isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == false || condition supplementaire
+include("/includes/script/files/config.php");
 
   if(isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == true && !isset($_GET['depid']))
    {
