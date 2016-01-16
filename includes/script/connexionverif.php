@@ -50,6 +50,7 @@ $data           = array();      // array to pass back data
 		else
 		{
 			$data['success'] = false;
+			$data['errors']  = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
         $data['message'] = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
 			
 		}
