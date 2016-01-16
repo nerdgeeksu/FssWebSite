@@ -3,6 +3,7 @@
  
    // !isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == false || condition supplementaire
  include("/includes/script/files/config.php");
+ 
   if(isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == true && !isset($_GET['actid']))
    {
 	   //$actid=$_GET['actid'];
@@ -36,10 +37,10 @@
 	   
 	    $actid=$_GET['actid'];
 	     
-$query=$fssdb->prepare('SELECT * FROM fss_news WHERE newsid =:code_act ');
-$query->bindValue(':code_act',$actid, PDO::PARAM_STR);
-$query->execute();
-	   
+		$query=$fssdb->prepare('SELECT * FROM fss_news WHERE newsid =:code_act ');
+		$query->bindValue(':code_act',$actid, PDO::PARAM_STR);
+		$query->execute();
+			   
 	     
 	   include('notsignedheader.php');
 	   

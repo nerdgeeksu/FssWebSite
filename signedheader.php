@@ -67,7 +67,7 @@
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
                 <!-- FORM -->
-                <form>
+                <form id="connexionform">
                   <!-- NAME -->
                   <div id="name-group" class="form-group">
                     <label>E-mail</label>
@@ -114,7 +114,7 @@
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
                 <!-- FORM -->
-                <form>
+                <form id="inscriptionform">
                   <!-- NAME -->
                   <div id="name-group" class="form-group">
                     <label>E-mail</label>

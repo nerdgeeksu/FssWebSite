@@ -67,7 +67,7 @@
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
                 <!-- FORM -->
-                <form>
+                <form id="connexionform">
                   <!-- NAME -->
                   <div id="name-group" class="form-group">
                     <label>E-mail</label>
@@ -114,7 +114,7 @@
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
                 <!-- FORM -->
-                <form id="connexionform">
+                <form id="inscriptionform">
                   <!-- NAME -->
                   <div id="name-group" class="form-group">
                     <label>E-mail</label>
@@ -236,7 +236,7 @@
         <i class="fa fa-fw fa-sign-in"></i>Se Connecter</button>
      
 			</li>
-			<li 
+			<li >
 			 <button class="btn btn-danger btn-sm" id="button-inscrire"
       role="button" data-toggle="modal" data-target="#inscription-modal">
         <i class="fa fa-fw fa-user"></i>Inscription</button>
