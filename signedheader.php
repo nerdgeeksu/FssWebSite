@@ -62,7 +62,7 @@
                 <!-- PAGE TITLE -->
                 
                   <h1>
-                    <span class="glyphicon glyphicon-log-in"></span>Veuillez entrer vos identifiants</h1>
+                    <span ></span>Veuillez entrer vos identifiants</h1>
                 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
@@ -86,7 +86,7 @@
                   </span>
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
-                    <span class="glyphicon glyphicon-log-in"></span>Se connecter</button>
+                    <span class="fa fa-fw fa-sign-in"></span>Se connecter</button>
                 </form>
               </div>
             </div>
@@ -109,7 +109,7 @@
                 <!-- PAGE TITLE -->
                 
                   <h1>
-                    <span class="glyphicon glyphicon-log-in"></span>Veuillez entrer vos identifiants</h1>
+                    <span ></span>Veuillez entrer vos identifiants</h1>
                 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
@@ -133,7 +133,7 @@
                   </span>
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
-                    <span class="glyphicon glyphicon-log-in"></span>Se connecter</button>
+                    <span class="fa fa-fw fa-user"></span>S'inscrire</button>
                 </form>
               </div>
             </div>

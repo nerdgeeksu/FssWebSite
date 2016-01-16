@@ -60,6 +60,7 @@ $('#connexionform').submit(function(event) {
           $(".ajax_wait").after(label);
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
+		$('#connexion-modal').close();
       }
     }
   });
@@ -96,7 +97,7 @@ $('#inscriptionform').submit(function(event) {
   // process the form
   $.ajax({
     type        : 'POST',
-    url         : 'includes/script/inscriptionverif.php.php',
+    url         : 'includes/script/inscriptionverif.php',
     data        : formData,
     dataType    : 'json',
     success     : function(data) {
@@ -129,6 +130,7 @@ $('#inscriptionform').submit(function(event) {
           $(".ajax_wait").after(label);
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
+		$('#inscription-modal').close();
       }
     }
   });
