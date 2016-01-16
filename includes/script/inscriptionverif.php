@@ -1,5 +1,6 @@
 <?php
 
+include('files/config.php');
 // connexionverif.php
 
 $errors         = array();      // array to hold validation errors
@@ -30,10 +31,31 @@ $data           = array();      // array to pass back data
 
         // DO ALL YOUR FORM PROCESSING HERE
         // THIS CAN BE WHATEVER YOU WANT TO DO (LOGIN, SAVE, UPDATE, WHATEVER)
-
+		
+		$query=$fssdb->prepare(" SELECT * FROM fss_users ");
+           $query->execute();
+		   $status = 0;	
+			$data=$query->fetch();
+		if( $data['email'] == $_POST['name'] && $data['password'] == $_POST['superheroAlias'] )
+		{
+        $status = 1;
+		}
         // show a message of success and provide a true success variable
+		
+		if($status == 1 )
+		{
+			session_start();
+		$_SESSION['is_successful_login'] = true ;
         $data['success'] = true;
         $data['message'] = 'Success!';
+		}
+		else
+		{
+			$data['success'] = false;
+			$data['errors']  = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
+           $data['message'] = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
+			
+		}
     }
 
     // return all our data to an AJAX call

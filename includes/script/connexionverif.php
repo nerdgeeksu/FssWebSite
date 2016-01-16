@@ -44,6 +44,8 @@ $data           = array();      // array to pass back data
 		
 		if($status == 1 )
 		{
+			session_start();
+		$_SESSION['is_successful_login'] = true ;
         $data['success'] = true;
         $data['message'] = 'Success!';
 		}
@@ -51,7 +53,7 @@ $data           = array();      // array to pass back data
 		{
 			$data['success'] = false;
 			$data['errors']  = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
-        $data['message'] = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
+           $data['message'] = 'Le nom d\'utilisateur ou le mot de passe n\'est pas correcte !';
 			
 		}
     }

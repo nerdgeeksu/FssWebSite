@@ -63,7 +63,11 @@ $('#connexionform').submit(function(event) {
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
 		$('#connexion-modal').modal('hide');
-		$(document).reload();
+		
+					setTimeout(function(){
+				   window.location='http://fssheav.azurewebsites.net/index.php';
+				}, 5000);
+	
       }
     }
   });
@@ -137,7 +141,12 @@ $('#connexionform').submit(function(event) {
 					// if validation is good add success message
 					$('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
 					$('#inscription-modal').modal('hide');
-					$(document).reload();
+					
+						setTimeout(function(){
+				   window.location='http://fssheav.azurewebsites.net/index.php';
+				}, 5000);
+				
+					
 				  }
 				}
 			  });
