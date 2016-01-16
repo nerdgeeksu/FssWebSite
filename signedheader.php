@@ -1,17 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//FR" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="favicon.ico">
     <meta name="keywords" content="Faculté des Sciences de Sfax , Faculté , Sfax , Faculté Sfax">
     <meta name="description" content="Site Officiel de la Faculté des Sciences de Sfax">
     <title>Faculté des Sciences de Sfax</title>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
     <!-- Bootstrap core CSS -->
     <link href="includes/script/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- <script type="text/javascript" src="includes/script/bootstrap/js/jquery-2.1.4.min.js"></script>
@@ -23,26 +24,29 @@
      -->
     <link href="includes/script/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="includes/script/FssScript.js"></script>
-	<script type="text/javascript" src="includes/script/magic.js">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="includes/script/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="includes/script/signin.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
-    <![endif]-->
-    <script src="includes/script/bootstrap/js/ie-emulation-modes-warning.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
-    and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="includes/script/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-    <link href="includes/script/login.css" rel="stylesheet" type="text/css">
-  </head><body>
+    <script type="text/javascript" src="includes/script/magic.js">
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <link href="includes/script/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="includes/script/signin.css" rel="stylesheet">
+      <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+      <!--[if lt IE 9]>
+        <script src="../../assets/js/ie8-responsive-file-warning.js">
+    </script>
+  <![endif]-->
+  <script src="includes/script/bootstrap/js/ie-emulation-modes-warning.js"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
+  and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="includes/script/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+  <link href="includes/script/login.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body>
     <div class="fade modal text-center" id="connexion-modal">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -54,48 +58,37 @@
           </div>
           <div class="modal-body">
             <div id="container" class="container-fluid text-center">
-             
-<div class="col-md-6 col-md-offset-3">
-
-  <!-- PAGE TITLE -->
-  <div class="page-header">
-    <h1><span class="glyphicon glyphicon-tower"></span> Submitting Forms with Angular</h1>
-  </div>
-
-  <!-- SHOW ERROR/SUCCESS MESSAGES -->
-  <div id="messages"></div>
-
-  <!-- FORM -->
-  <form>
-    <!-- NAME -->
-    <div id="name-group" class="form-group">
-      <label>Name</label>
-      <input type="text" name="name" class="form-control" placeholder="Bruce Wayne">
-      <span class="help-block"></span>
-    </div>
-
-    <!-- SUPERHERO NAME -->
-    <div id="superhero-group" class="form-group">
-      <label>Superhero Alias</label>
-      <input type="text" name="superheroAlias" class="form-control" placeholder="Caped Crusader">
-      <span class="help-block"></span>
-    </div>
-
-	<span class="ajax_wait" align=center>
-        <!--don't delete this span class="ajax_wait"-->
-    </span>
-	
-    <!-- SUBMIT BUTTON -->
-    <button type="submit" class="btn btn-success btn-lg btn-block">
-      <span class="glyphicon glyphicon-flash"></span> Submit!
-    </button>
-	
-	
-	
-  </form>
-
-</div>
-
+              <div class="col-md-6 col-md-offset-3">
+                <!-- PAGE TITLE -->
+                
+                  <h1>
+                    <span class="glyphicon glyphicon-log-in"></span>Veuillez entrer vos identifiants</h1>
+                
+                <!-- SHOW ERROR/SUCCESS MESSAGES -->
+                <div id="messages"></div>
+                <!-- FORM -->
+                <form>
+                  <!-- NAME -->
+                  <div id="name-group" class="form-group">
+                    <label>E-mail</label>
+                    <input type="text" name="name" class="form-control" placeholder="Votre E-mail">
+                    <span class="help-block"></span>
+                  </div>
+                  <!-- SUPERHERO NAME -->
+                  <div id="superhero-group" class="form-group">
+                    <label>Mot de Passe</label>
+                    <input type="text" name="superheroAlias" class="form-control"
+                    placeholder="Votre Mot de passe">
+                    <span class="help-block"></span>
+                  </div>
+                  <span class="ajax_wait" align="center">
+                    <!--don't delete this span class="ajax_wait"-->
+                  </span>
+                  <!-- SUBMIT BUTTON -->
+                  <button type="submit" class="btn btn-success btn-lg btn-block">
+                    <span class="glyphicon glyphicon-log-in"></span>Se connecter</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -114,16 +107,22 @@
             <div class="container-fluid text-center">
               <form class="form-signin">
                 <h2 class="form-signin-heading">Veuillez saisir vos informations d'identification</h2>
-                <label for="inputFName" class="sr-only">Nom :</label>
-                <input type="text" id="inputFName" class="form-control" placeholder="Nom" required="" autofocus="">
+                <label for="inputFName"
+                class="sr-only">Nom :</label>
+                <input type="text" id="inputFName" class="form-control" placeholder="Nom"
+                required="" autofocus="">
                 <label for="inputLName" class="sr-only">Prenom :</label>
-                <input type="text" id="inputLName" class="form-control" placeholder="Prenom" required="">
+                <input type="text" id="inputLName" class="form-control"
+                placeholder="Prenom" required="">
                 <label for="inputBDate" class="sr-only">Date de Naissance :</label>
-                <input type="text" id="inputBDate" class="form-control" placeholder="Date de Naissance" required="">
+                <input type="text" id="inputBDate" class="form-control"
+                placeholder="Date de Naissance" required="">
                 <label for="inputEmail" class="sr-only">Adresse mail :</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse E-mail" required="">
+                <input type="email" id="inputEmail" class="form-control"
+                placeholder="Adresse E-mail" required="">
                 <label for="inputPassword" class="sr-only">Mot de passe :</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de Passe" required="">
+                <input type="password" id="inputPassword" class="form-control"
+                placeholder="Mot de Passe" required="">
                 <br>
                 <button class="btn btn-block btn-lg btn-primary" type="submit">S'inscrire</button>
               </form>
@@ -137,7 +136,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="page-header text-center" >
+            <div class="page-header text-center">
               <h1>
                 <small>
                   <br>
@@ -150,7 +149,6 @@
       </div>
     </div>
     </a>
-    
     <div class="navbar navbar-default navbar-static-top " id="mynavbar">
       <div class="container" id="navbar-container">
         <div class="navbar-header">
@@ -186,22 +184,11 @@
             <li class="btn btn-default">
               <a href="#" class="btn btn-default">Départements<i class="fa fa-fw fa-bank"></i></a>
               <ul class="list-unstyled text-center">
-                <?php
-				
-    $query=$fssdb->prepare(" SELECT * FROM fss_departements ");
-    $query->execute();
-				
-				while($data=$query->fetch())
-				{
-				$depid=$data['dep_id'];
-				$deplib=$data['lib_dep'];
-				echo'
-				<li>
+                <!--?php $query=$fssdb--->prepare(" SELECT * FROM fss_departements "); $query-&gt;execute(); while($data=$query-&gt;fetch())
+                { $depid=$data['dep_id']; $deplib=$data['lib_dep']; echo'
+                <li>
                   <a href="departement.php?depid='.$depid.'">'.$deplib.'</a>
-                </li>';
-				}
-                ?>
-              </ul>
+                </li>'; } ?&gt;</ul>
             </li>
             <li class="btn btn-default">
               <a href="http://www.edsf.fss.rnu.tn/" class="btn btn-default" target="_new">Ecole Doctorale<i class="fa fa-fw fa-graduation-cap"></i></a>
@@ -209,25 +196,24 @@
             <li class="btn btn-default">
               <a href="#" class="btn btn-default">Documents<i class="fa fa-fw fa-leanpub"></i></a>
             </li>
-			<li >
-			<div class="btn-group btn-group-sm-1 " role="group" aria-label="user-button" id="userbutton2">
-      <div class="input-group " id="facsearchzone">
-        <input type="text" class="form-control" placeholder="Chercher ...">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go !</button>
-        </span>
-      </div>
-    </div>
-			
-			</li>
-			
+            <li>
+              <div class="btn-group btn-group-sm-1 " role="group" aria-label="user-button"
+              id="userbutton2">
+                <div class="input-group " id="facsearchzone">
+                  <input type="text" class="form-control" placeholder="Chercher ...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go !</button>
+                  </span>
+                </div>
+              </div>
+            </li>
             <li class="btn btn-default pull-right" style="display:inline-block;">
               <a> <img class="center-block img-circle text-center thumbnail col-sm-5 col-sm-5" src="includes/images/drake.jpg">Mon Espace
               <span class="caret"></span>
              </a>
               <ul class="list-unstyled text-center">
                 <li>
-                  <a href="profil.php?unid=<?php echo 'A01034643'; ?>">Voir Profil</a>
+                  <a href="profil.php?unid=&lt;?php echo 'A01034643'; ?&gt;">Voir Profil</a>
                 </li>
                 <li>
                   <a href="index.php?logout=true">Se Deconnecter<i class="fa fa-fw fa-sign-out"></i></a>
@@ -239,3 +225,6 @@
       </div>
       <!-- Large button group -->
     </div>
+  </body>
+
+</html>
