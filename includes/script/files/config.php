@@ -5,7 +5,7 @@
   define('MYSQL_HOSTNAME',  'br-cdbr-azure-south-a.cloudapp.net:3306');  /* hostname */
   define('MYSQL_USERNAME',  'b08ef2695088a5');       /* username */
   define('MYSQL_PASSWORD',  '78fe9174');   /* password */
-  define('MYSQL_DATABASE',  'acsm_235174c19e8776'); /* database */
+  define('MYSQL_DATABASE',  'acsm_2351747c19e8776'); /* database */
   /* Login successful the redirect to */
   define('SUCCESS_LOGIN_GOTO' ,'index.php');
  
