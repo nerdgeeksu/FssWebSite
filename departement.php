@@ -38,8 +38,8 @@
 	   include('notsignedheader.php');
 	  
 	     $actid=$_GET['depid'];
-	     $db = new PDO('mysql:host=localhost;dbname=fss-db', 'diopbach', 'nabounanc1');
-$query=$db->prepare('SELECT lib_dep,presentation_dep,parcours_dep,chef_dep,adjchef_dep,img_dep,nom_img,chemin_img FROM fss_departements,fss_images WHERE dep_id =:code_dep ');
+	     
+$query=$fssdb->prepare('SELECT lib_dep,presentation_dep,parcours_dep,chef_dep,adjchef_dep,img_dep,nom_img,chemin_img FROM fss_departements,fss_images WHERE dep_id =:code_dep ');
 $query->bindValue(':code_dep',$actid, PDO::PARAM_STR);
 $query->execute();     
 	   
@@ -56,8 +56,8 @@ $query->execute();
 	   include('signedheader.php');
 	  
 	     $actid=$_GET['depid'];
-	     $db = new PDO('mysql:host=localhost;dbname=fss-db', 'diopbach', 'nabounanc1');
-$query=$db->prepare('SELECT lib_dep,presentation_dep,parcours_dep,chef_dep,adjchef_dep,img_dep,nom_img,chemin_img FROM fss_departements,fss_images WHERE dep_id =:code_dep ');
+	    
+$query=$fssdb->prepare('SELECT lib_dep,presentation_dep,parcours_dep,chef_dep,adjchef_dep,img_dep,nom_img,chemin_img FROM fss_departements,fss_images WHERE dep_id =:code_dep ');
 $query->bindValue(':code_dep',$actid, PDO::PARAM_STR);
 $query->execute();
 	   

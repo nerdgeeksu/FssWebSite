@@ -37,8 +37,8 @@
    {
 	   
 	    $actid=$_GET['actid'];
-	     $db = new PDO('mysql:host=localhost;dbname=fss-db', 'diopbach', 'nabounanc1');
-$query=$db->prepare('SELECT * FROM fss_news WHERE newsid =:code_act ');
+	     
+$query=$fssdb->prepare('SELECT * FROM fss_news WHERE newsid =:code_act ');
 $query->bindValue(':code_act',$actid, PDO::PARAM_STR);
 $query->execute();
 	   
@@ -70,8 +70,8 @@ $query->execute();
    elseif( isset($_SESSION['is_successful_login']) || $_SESSION['is_successful_login'] == true && isset($_GET['actid']))
    {
 	     $actid=$_GET['actid'];
-	     $db = new PDO('mysql:host=localhost;dbname=fss-db', 'diopbach', 'nabounanc1');
-$query=$db->prepare('SELECT * FROM fss_news WHERE newsid =:code_act ');
+	   
+$query=$fssdb->prepare('SELECT * FROM fss_news WHERE newsid =:code_act ');
 $query->bindValue(':code_act',$actid, PDO::PARAM_STR);
 $query->execute();
 	   
