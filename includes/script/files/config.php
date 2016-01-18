@@ -2,10 +2,23 @@
 
 
   error_reporting(0);
-  define('MYSQL_HOSTNAME',  'br-cdbr-azure-south-a.cloudapp.net:3306');  /* hostname */
-  define('MYSQL_USERNAME',  'b08ef2695088a5');       /* username */
-  define('MYSQL_PASSWORD',  '78fe9174');   /* password */
-  define('MYSQL_DATABASE',  'acsm_2351747c19e8776'); /* database */
+
+  define('MYSQL_HOSTNAME',  'br-cdbr-azure-south-a.cloudapp.net:3306');  // hostname
+  define('MYSQL_USERNAME',  'b08ef2695088a5');       // username *
+  define('MYSQL_PASSWORD',  '78fe9174');   // password 
+  define('MYSQL_DATABASE',  'acsm_2351747c19e8776'); // database 
+  
+
+  
+  
+  /*
+  define('MYSQL_HOSTNAME',  'localhost:3308');  //* hostname 
+  define('MYSQL_USERNAME',  'root');       //* username 
+  define('MYSQL_PASSWORD',  'nabounanc1');   //* password
+  define('MYSQL_DATABASE',  'fss-db'); //* database
+  */
+  
+  
   /* Login successful the redirect to */
   define('SUCCESS_LOGIN_GOTO' ,'index.php');
  

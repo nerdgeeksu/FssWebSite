@@ -5,68 +5,82 @@ $(document).ready(function() {
 // process the form
 $('#connexionform').submit(function(event) {
 	
+	 
+	 
 	$(".ajax_spinner").remove();
     $(".ajax_wait").remove();
 
-   var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement </span>";
-   $(".ajax_wait").after(label);
+
    
   // remove the past errors
-  $('#name-group').removeClass('has-error');
-  $('#name-group .help-block').empty();
-  $('#superhero-group').removeClass('has-error');
-  $('#superhero-group .help-block').empty();
+  $('#email-group').removeClass('has-error');
+  $('#email-group .help-block').empty();
+  $('#password-group').removeClass('has-error');
+  $('#password-group .help-block').empty();
 
   // remove success messages
   $('#messages').removeClass('alert alert-success').empty();
+  $('#messages').removeClass('alert alert-danger alert-dismissable').empty();
+  
+    var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement </span>";
+   $(".ajax_wait").after(label);
+  
 
   // get the form data
   var formData = {
-      'name'              : $('input[name=name]').val(),
-      'superheroAlias'    : $('input[name=superheroAlias]').val()
+      'email'              : $('input[name=email]').val(),
+      'password'    : $('input[name=password]').val(),
+	  'tag'	: $('input[name=tag]').val()
   };
 
   // process the form
   $.ajax({
     type        : 'POST',
-    url         : 'includes/script/connexionverif.php',
+    url         : 'includes/script/userhandling.php', 
     data        : formData,
     dataType    : 'json',
     success     : function(data) {
 
 	 
 	 
-      
-
+    
       // if validation fails
       // add the error class to show a red input
       // add the error message to the help block under the input
       if ( ! data.success) {
 		  
+		  console.log(data);
+		  
 		  $(".ajax_spinner").remove();
 		  $(".ajax_wait").remove();
 		  
-        if (data.errors.name) {
-          $('#name-group').addClass('has-error');
-          $('#name-group .help-block').html(data.errors.name);
+		  
+        if (data.errors.email) {
+          $('#email-group').addClass('has-error');
+          $('#email-group .help-block').html(data.errors.email);
         }
 
-        if (data.errors.superheroAlias) {
-          $('#superhero-group').addClass('has-error');
-          $('#superhero-group .help-block').html(data.errors.superheroAlias);
+        if (data.errors.password) {
+          $('#password-group').addClass('has-error');
+          $('#password-group .help-block').html(data.errors.password);
         }
+		
+		$('#messages').addClass('alert alert-danger alert-dismissable').append('<p>' + data.message + '</p>');
 
       } else {
 		  
-		  var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement</span>";
-          $(".ajax_wait").after(label);
+		   console.log(data);
+		   
+		  
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
+		
 		$('#connexion-modal').modal('hide');
 		
-					setTimeout(function(){
-				   window.location='http://fssheav.azurewebsites.net/signedindex.php';
-				}, 1000);
+		
+	
+    setTimeout(function(){ window.location='http://fssheav.azurewebsites.net/signedindex.php';
+				}, 4000);
 	
       }
     }
@@ -81,78 +95,97 @@ $('#connexionform').submit(function(event) {
             //  ==================  Inscription Processing   ===================
 
 			// process the form
-			$('#inscriptionform').submit(function(event) {
-				
-				$(".ajax_spinner").remove();
-				$(".ajax_wait").remove();
+$('#inscriptionform').submit(function(event) {
+	 
+	$(".ajax_spinner").remove();
+    $(".ajax_wait").remove();
 
-			   var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement </span>";
-			   $(".ajax_wait").after(label);
-			   
-			  // remove the past errors
-			  $('#name-group').removeClass('has-error');
-			  $('#name-group .help-block').empty();
-			  $('#superhero-group').removeClass('has-error');
-			  $('#superhero-group .help-block').empty();
+   
+   
+  // remove the past errors
+  $('#reg_username-group').removeClass('has-error');
+  $('#reg_email-group .help-block').empty();
+  $('#reg_username-group').removeClass('has-error');
+  $('#reg_email-group .help-block').empty();
+  $('#reg_password-group').removeClass('has-error');
+  $('#reg_password-group .help-block').empty();
 
-			  // remove success messages
-			  $('#messages').removeClass('alert alert-success').empty();
+  // remove success messages
+  $('#reg_messages').removeClass('alert alert-success').empty();
+  $('#reg_messages').removeClass('alert alert-danger alert-dismissable').empty();
+  
+   
+   
+  // get the form data
+  var formData = {
+      'username'              : $('input[name=reg_username]').val(),
+	  'email'              : $('input[name=reg_email]').val(),
+      'password'    : $('input[name=reg_password]').val(),
+	  'tag'	: $('input[name=reg_tag]').val()
+  };
 
-			  // get the form data
-			  var formData = {
-				  'name'              : $('input[name=name]').val(),
-				  'superheroAlias'    : $('input[name=superheroAlias]').val()
-			  };
+  // process the form
+  $.ajax({
+    type        : 'POST',
+    url         : 'includes/script/userhandling.php', 
+    data        : formData,
+    dataType    : 'json',
+    success     : function(data) {
 
-			  // process the form
-			  $.ajax({
-				type        : 'POST',
-				url         : 'includes/script/inscriptionverif.php',
-				data        : formData,
-				dataType    : 'json',
-				success     : function(data) {
+	 
+	var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement </span>";
+   $(".ajax_wait").after(label);
+      
+   
+   
+      // if validation fails
+      // add the error class to show a red input
+      // add the error message to the help block under the input
+      if ( ! data.success) {
+		  
+		  console.log(data);
+		  
+		  $(".ajax_spinner").remove();
+		  $(".ajax_wait").remove();
+		 
+		if (data.errors.username) {
+          $('#reg_username-group').addClass('has-error');
+          $('#reg_username-group .help-block').html(data.errors.username);
+        }
+		
+        if (data.errors.email) {
+          $('#reg_email-group').addClass('has-error');
+          $('#reg_email-group .help-block').html(data.errors.email);
+        }
 
-				 
-				 
-				  
+        if (data.errors.password) {
+          $('#reg_password-group').addClass('has-error');
+          $('#reg_password-group .help-block').html(data.errors.password);
+        }
+		
+		$('#reg_messages').addClass('alert alert-danger alert-dismissable').append('<p>' + data.message + '</p>');
 
-				  // if validation fails
-				  // add the error class to show a red input
-				  // add the error message to the help block under the input
-				  if ( ! data.success) {
-					  
-					  $(".ajax_spinner").remove();
-					  $(".ajax_wait").remove();
-					  
-					if (data.errors.name) {
-					  $('#name-group').addClass('has-error');
-					  $('#name-group .help-block').html(data.errors.name);
-					}
+      } else {
+		  
+		    console.log(data);
+		   
+		 
+        // if validation is good add success message
+        $('#reg_messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
+		
+		$('#inscription-modal').modal('hide');
+		
+		
+	
+    setTimeout(function(){ window.location='http://fssheav.azurewebsites.net/signedindex.php';
+				}, 4000);
+	
+      }
+    }
+  });
 
-					if (data.errors.superheroAlias) {
-					  $('#superhero-group').addClass('has-error');
-					  $('#superhero-group .help-block').html(data.errors.superheroAlias);
-					}
-
-				  } else {
-					  
-					  var label = "<span class='ajax_spinner' align=center><img src='includes/script/files/ispinner.gif'/> Chargement</span>";
-					  $(".ajax_wait").after(label);
-					// if validation is good add success message
-					$('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
-					$('#inscription-modal').modal('hide');
-					
-						setTimeout(function(){
-				   window.location='http://fssheav.azurewebsites.net/signedindex.php';
-				}, 1000);
-				
-					
-				  }
-				}
-			  });
-
-			  // stop the form from submitting and refreshing
-			  event.preventDefault();
-			});
+  // stop the form from submitting and refreshing
+  event.preventDefault();
+});
 
 });

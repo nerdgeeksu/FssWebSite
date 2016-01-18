@@ -58,32 +58,34 @@
           </div>
           <div class="modal-body">
             <div id="container" class="container-fluid text-center">
-              <div class="col-md-6 col-md-offset-3">
+              <div class="col-sm-10 col-md-offset-1" >
                 <!-- PAGE TITLE -->
                 
-                  <h1>
-                    <span ></span>Veuillez entrer vos identifiants</h1>
+                  <h4>
+                    <span ></span>Veuillez saisir vos identifiants</h4>
                 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
                 <!-- FORM -->
                 <form id="connexionform">
-                  <!-- NAME -->
-                  <div id="name-group" class="form-group">
+                  <!-- E-mail -->
+                  <div id="email-group" class="form-group">
                     <label>E-mail</label>
-                    <input type="text" name="name" class="form-control" placeholder="Votre E-mail">
+                    <input type="email" name="email" class="form-control" placeholder="Votre E-mail">
                     <span class="help-block"></span>
                   </div>
                   <!-- SUPERHERO NAME -->
-                  <div id="superhero-group" class="form-group">
+                  <div id="password-group" class="form-group">
                     <label>Mot de Passe</label>
-                    <input type="text" name="superheroAlias" class="form-control"
-                    placeholder="Votre Mot de passe">
+                    <input type="password" name="password" class="form-control" placeholder="Votre Mot de passe">
+					
                     <span class="help-block"></span>
                   </div>
                   <span class="ajax_wait" align="center">
                     <!--don't delete this span class="ajax_wait"-->
                   </span>
+				  <input type="text" name="tag" value="login" hidden>
+				  
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
                     <span class="fa fa-fw fa-sign-in"></span>Se connecter</button>
@@ -94,6 +96,7 @@
         </div>
       </div>
     </div>
+	
     <div class="fade modal text-center" id="inscription-modal">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -105,32 +108,37 @@
           </div>
           <div class="modal-body">
             <div id="container" class="container-fluid text-center">
-              <div class="col-md-6 col-md-offset-3">
+              <div class="col-md-10 col-md-offset-1">
                 <!-- PAGE TITLE -->
                 
-                  <h1>
-                    <span ></span>Veuillez entrer vos identifiants</h1>
+                  
                 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
-                <div id="messages"></div>
+                <div id="reg_messages"></div>
                 <!-- FORM -->
                 <form id="inscriptionform">
-                  <!-- NAME -->
-                  <div id="name-group" class="form-group">
-                    <label>E-mail</label>
-                    <input type="text" name="name" class="form-control" placeholder="Votre E-mail">
+				<!-- Username -->
+                  <div id="reg_username-group" class="form-group">
+                    <label>Nom d'utilisateur </label>
+                    <input type="text" name="reg_username" class="form-control" placeholder="Votre nom d'utilisateur "> 
                     <span class="help-block"></span>
                   </div>
-                  <!-- SUPERHERO NAME -->
-                  <div id="superhero-group" class="form-group">
+                  <!-- E-mail -->
+                  <div id="reg_email-group" class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" name="reg_email" class="form-control" placeholder="Votre E-mail">
+                    <span class="help-block"></span>
+                  </div>
+                  <!-- Password -->
+                  <div id="reg_password-group" class="form-group">
                     <label>Mot de Passe</label>
-                    <input type="text" name="superheroAlias" class="form-control"
-                    placeholder="Votre Mot de passe">
+                    <input type="password" name="reg_password" class="form-control" placeholder="Votre Mot de passe">
                     <span class="help-block"></span>
                   </div>
                   <span class="ajax_wait" align="center">
                     <!--don't delete this span class="ajax_wait"-->
                   </span>
+				  <input type="text" name="reg_tag" value="register" hidden>
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
                     <span class="fa fa-fw fa-user"></span>S'inscrire</button>
