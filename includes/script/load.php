@@ -26,7 +26,7 @@ while($data=$query->fetch() )
 				</div>
 					<div class="panel-body">
 						<?php echo $descact; ?>
-						<a href="actualite.php?actid=<?php echo $idact; ?>">Voir la suite <a>
+						<a href="actualite.php?actid=<?php echo $idact; ?>">Voir la suite </a>
 					</div>
 				</div>
 			
@@ -61,7 +61,7 @@ while($i<5)
 				</div>
 					<div class="panel-body">
 						<?php echo $descact; ?>
-						<a href="actualite.php?actid=<?php echo $idact; ?>">Voir la suite <a>
+						<a href="actualite.php?actid=<?php echo $idact; ?>">Voir la suite </a>
 					</div>
 				</div>
 			

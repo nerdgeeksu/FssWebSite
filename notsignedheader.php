@@ -1,11 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//FR" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
     <link rel="icon" href="favicon.ico">
     <meta name="keywords" content="Faculté des Sciences de Sfax , Faculté , Sfax , Faculté Sfax">
     <meta name="description" content="Site Officiel de la Faculté des Sciences de Sfax">
-    <title>Faculté des Sciences de Sfax</title>
+    <title><?php echo $lang['PAGE_TITLE']; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -23,12 +25,11 @@
     <link href="includes/script/bootstrap/css/bootstrap.min.css" rel="stylesheet">
      -->
     <link href="includes/script/style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="includes/script/FssScript.js"></script>
     <script type="text/javascript" src="includes/script/magic.js"></script>
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
       <link href="includes/script/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
       <!-- Custom styles for this template -->
-      <link href="includes/script/signin.css" rel="stylesheet">
+      
       <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
       <!--[if lt IE 9]>
         <script src="../../assets/js/ie8-responsive-file-warning.js">
@@ -43,16 +44,18 @@
   <![endif]-->
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="includes/script/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-  <link href="includes/script/login.css" rel="stylesheet" type="text/css">
   </head>
   
   <body>
+    
+	    	
+      
     <div class="fade modal text-center" id="connexion-modal">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="myModalLabel">Connexion
+            <h4 class="modal-title" id="myModalLabel"><?php echo $lang['CONNEXION_MODAL_TITLE']; ?>
               <br>
             </h4>
           </div>
@@ -62,7 +65,7 @@
                 <!-- PAGE TITLE -->
                 
                   <h4>
-                    <span ></span>Veuillez saisir vos identifiants</h4>
+                    <span ></span><?php echo $lang['CONNEXION_MODAL_TIP']; ?></h4>
                 
                 <!-- SHOW ERROR/SUCCESS MESSAGES -->
                 <div id="messages"></div>
@@ -70,14 +73,14 @@
                 <form id="connexionform">
                   <!-- E-mail -->
                   <div id="email-group" class="form-group">
-                    <label>E-mail</label>
-                    <input type="email" name="email" class="form-control" placeholder="Votre E-mail">
+                    <label><?php echo $lang['CONNEXION_MODAL_EMAIL']; ?></label>
+                    <input type="email" name="email" class="form-control" placeholder="<?php echo $lang['CONNEXION_MODAL_EMAIL_PLCH']; ?>">
                     <span class="help-block"></span>
                   </div>
-                  <!-- SUPERHERO NAME -->
+                  <!-- Password -->
                   <div id="password-group" class="form-group">
-                    <label>Mot de Passe</label>
-                    <input type="password" name="password" class="form-control" placeholder="Votre Mot de passe">
+                    <label><?php echo $lang['CONNEXION_MODAL_PASSWORD']; ?></label>
+                    <input type="password" name="password" class="form-control" placeholder="<?php echo $lang['CONNEXION_MODAL_PASSWORD_PLCH']; ?>">
 					
                     <span class="help-block"></span>
                   </div>
@@ -88,7 +91,7 @@
 				  
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
-                    <span class="fa fa-fw fa-sign-in"></span>Se connecter</button>
+                    <span class="fa fa-fw fa-sign-in"></span><?php echo $lang['CONNEXION_MODAL_SUBMIT']; ?></button>
                 </form>
               </div>
             </div>
@@ -102,7 +105,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="myModalLabel">Inscription
+            <h4 class="modal-title" id="myModalLabel"><?php echo $lang['INSCRIPTION_MODAL_TITLE']; ?>
               <br>
             </h4>
           </div>
@@ -119,20 +122,20 @@
                 <form id="inscriptionform">
 				<!-- Username -->
                   <div id="reg_username-group" class="form-group">
-                    <label>Nom d'utilisateur </label>
-                    <input type="text" name="reg_username" class="form-control" placeholder="Votre nom d'utilisateur "> 
+                    <label><?php echo $lang['INSCRIPTION_MODAL_USERNAME']; ?></label>
+                    <input type="text" name="reg_username" class="form-control" placeholder="<?php echo $lang['INSCRIPTION_MODAL_USERNAME_PLCH']; ?> "> 
                     <span class="help-block"></span>
                   </div>
                   <!-- E-mail -->
                   <div id="reg_email-group" class="form-group">
-                    <label>E-mail</label>
-                    <input type="email" name="reg_email" class="form-control" placeholder="Votre E-mail">
+                    <label><?php echo $lang['INSCRIPTION_MODAL_EMAIL']; ?></label>
+                    <input type="email" name="reg_email" class="form-control" placeholder="<?php echo $lang['INSCRIPTION_MODAL_EMAIL_PLCH']; ?>">
                     <span class="help-block"></span>
                   </div>
                   <!-- Password -->
                   <div id="reg_password-group" class="form-group">
-                    <label>Mot de Passe</label>
-                    <input type="password" name="reg_password" class="form-control" placeholder="Votre Mot de passe">
+                    <label><?php echo $lang['INSCRIPTION_MODAL_PASSWORD']; ?></label>
+                    <input type="password" name="reg_password" class="form-control" placeholder="<?php echo $lang['INSCRIPTION_MODAL_PASSWORD_PLCH']; ?>">
                     <span class="help-block"></span>
                   </div>
                   <span class="ajax_wait" align="center">
@@ -141,7 +144,7 @@
 				  <input type="text" name="reg_tag" value="register" hidden>
                   <!-- SUBMIT BUTTON -->
                   <button type="submit" class="btn btn-success btn-lg btn-block">
-                    <span class="fa fa-fw fa-user"></span>S'inscrire</button>
+                    <span class="fa fa-fw fa-user"></span><?php echo $lang['INSCRIPTION_MODAL_SUBMIT']; ?></button>
                 </form>
               </div>
             </div>
@@ -149,25 +152,42 @@
         </div>
       </div>
     </div>
-    <a href="index.php"><div class="section section-info">
-      <div class="background-image" style="background-image : url('includes/images/header.jpg')"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="page-header text-center">
-              <h1>
-                <small>
-                  <br>
-                  <br>
-                </small>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </a>
 	
+    <a href="index.php" >
+		<div class="section section-info">
+		  <div class="background-image" style="background-image : url('includes/images/header.jpg')"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="page-header text-center">
+						  <h1>
+							<small>
+							  <br>
+							  <br>
+							</small>
+						  </h1>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="section">
+					<div class="col-md-3 pull-right " >
+						<ul class="breadcrumb" draggable="true">
+							<li class="breadcrumb-item">
+								<a href="index.php?fss_lang=fr">FR <img src="languages/fr.png" alt="Francais" > </a>
+							</li>
+							<li class="breadcrumb-item">
+								<a href="index.php?fss_lang=en">EN <img src="languages/en.png" alt="English" /> </a>
+							</li>
+							<li class="breadcrumb-item active">
+								<a href="index.php?fss_lang=ar">AR <img src="languages/ar.png" alt="Arabic" /> </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		  </div>
+	 	  
+	</a>
 	
     <div class="navbar navbar-default navbar-static-top " id="mynavbar">
       <div class="container" id="navbar-container">
@@ -182,27 +202,27 @@
         <div class="collapse navbar-collapse " id="navbar-ex-collapse">
           <ul class="nav navbar-nav nav-pills navbar-right " id="menu">
             <li class="active btn btn-default">
-              <a href="index.php" class="btn btn-default">Accueil<i class="fa fa-star fa-fw"></i></a>
+              <a href="index.php" class="btn btn-default"><?php echo $lang['MENU_HOME']; ?><i class="fa fa-star fa-fw"></i></a>
             </li>
             <li class="btn btn-default">
-              <a href="#" class="btn btn-default">Formations<i class="fa fa-fw fa-book"></i></a>
+              <a href="#" class="btn btn-default"><?php echo $lang['MENU_FORMATION']; ?><i class="fa fa-fw fa-book"></i></a>
               <ul class="list-unstyled text-center">
                 <li>
-                  <a href="#">Etudes Préparatoires</a>
+                  <a href="#"><?php echo $lang['MENU_FORMATION_SM1']; ?></a>
                 </li>
                 <li>
-                  <a href="#">Master</a>
+                  <a href="#"><?php echo $lang['MENU_FORMATION_SM2']; ?></a>
                 </li>
                 <li>
-                  <a href="#">Doctorat</a>
+                  <a href="#"><?php echo $lang['MENU_FORMATION_SM3']; ?></a>
                 </li>
                 <li>
-                  <a href="#">Habilitation Universitaire</a>
+                  <a href="#"><?php echo $lang['MENU_FORMATION_SM4']; ?></a>
                 </li>
               </ul>
             </li>
             <li class="btn btn-default">
-              <a href="#" class="btn btn-default">Départements<i class="fa fa-fw fa-bank"></i></a>
+              <a href="#" class="btn btn-default"><?php echo $lang['MENU_DEPARTEMENTS']; ?><i class="fa fa-fw fa-bank"></i></a>
               <ul class="list-unstyled text-center">
                  <?php
 				
@@ -222,15 +242,15 @@
               </ul>
             </li>
             <li class="btn btn-default">
-              <a href="http://www.edsf.fss.rnu.tn/" class="btn btn-default" target="_new">Ecole Doctorale<i class="fa fa-fw fa-graduation-cap"></i></a>
+              <a href="http://www.edsf.fss.rnu.tn/" class="btn btn-default" target="_new"><?php echo $lang['MENU_ECOLE_DOC']; ?><i class="fa fa-fw fa-graduation-cap"></i></a>
             </li>
             <li class="btn btn-default">
-              <a href="#" class="btn btn-default">Documents<i class="fa fa-fw fa-leanpub"></i></a>
+              <a href="#" class="btn btn-default"><?php echo $lang['MENU_DOCUMENTS']; ?><i class="fa fa-fw fa-leanpub"></i></a>
             </li>
             <li >
 			<div class="btn-group btn-group-sm-1 " role="group" aria-label="user-button" id="userbutton">
       <div class="input-group " id="facsearchzone">
-        <input type="text" class="form-control" placeholder="Chercher ...">
+        <input type="text" class="form-control" placeholder="<?php echo $lang['MENU_RECHERCHE']; ?>">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">Go !</button>
         </span>
@@ -241,13 +261,13 @@
 		
         <button type="button" id="button-connecter" class="btn btn-sm btn-success"
       role="button" data-target="#connexion-modal" data-toggle="modal">
-        <i class="fa fa-fw fa-sign-in"></i>Se Connecter</button>
+        <i class="fa fa-fw fa-sign-in"></i><?php echo $lang['MENU_CONNEXION']; ?></button>
      
 			</li>
 			<li >
 			 <button class="btn btn-danger btn-sm" id="button-inscrire"
       role="button" data-toggle="modal" data-target="#inscription-modal">
-        <i class="fa fa-fw fa-user"></i>Inscription</button>
+        <i class="fa fa-fw fa-user"></i><?php echo $lang['MENU_INSCRIPTION']; ?></button>
 			</li>
           </ul>
         </div>

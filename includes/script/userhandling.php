@@ -1,5 +1,6 @@
 <?php
  
+ include('files/config.php');
 /**
  * File to handle all API requests
  * Accepts GET and POST
@@ -20,10 +21,6 @@ if (isset($_POST['tag']) && $_POST['tag'] != '')
 		// get tag
 		$tag = $_POST['tag'];
 	 
-		// include db handler
-		require_once 'files/DB_Functions.php';
-		$db = new DB_Functions();
- 
    
  
 		// check for tag type
@@ -56,30 +53,39 @@ if (isset($_POST['tag']) && $_POST['tag'] != '')
 			}
 			else
 			{
-				$email = $_POST['email'];
-				$password = $_POST['password'];
-		 
+				$email = htmlspecialchars($_POST['email']);
+				$password = htmlspecialchars($_POST['password']);
+				
+				
+				$query=$fssdb->prepare(" SELECT * FROM fss_users where email = :email ");
+				$query->bindValue(':email', $email, PDO::PARAM_STR);
+				$query->execute();	
+				$qdata=$query->fetch();
+				
 				// check for user
-				$user = $db->getUserByEmailAndPassword($email, $password);
-				if ($user != false) 
+				
+				// password_verify($password,$qdata['password'])
+				if (password_verify($password,$qdata['password'])) 
 				{
 					// user found
 					
-					$data["uid"] = $user["unique_id"];
-					$data["user"]["name"] = $user["name"];
-					$data["user"]["email"] = $user["email"];
-					$data["user"]["created_at"] = $user["created_at"];
-					$data["user"]["updated_at"] = $user["updated_at"];
+					$data["uid"] = $qdata["unique_id"];
+					$data["user"]["username"] = $qdata["username"];
+					$data["user"]["email"] = $qdata["email"];
+					$data["user"]["create_time"] = $qdata["create_time"];
 					$data['success'] = true;
 					$data['message'] = ' Connexion Reussie !';
 					$data["errors"] = false;
+					$data['is_successful_login'] = true;
 					
 				}
 				else 
 				{
+				
 					// user not found
-					// echo json with error = 1
+					
 					$data['success'] = false;
+					$data['is_successful_login'] = false;
 					$data["message"] = "E-mail ou mot de passe incorrecte veuillez ressayez !" ;
 					$errors['tag'] = " E-mail ou mot de passe incorrecte veuillez ressayez ." ;
 		            $data['errors']  = $errors;
@@ -126,16 +132,22 @@ if (isset($_POST['tag']) && $_POST['tag'] != '')
 			{
 						
 					// Request type is Register new user
-					$name = $_POST['username'];
-					$email = $_POST['email'];
-					$password = $_POST['password'];
+					$username = htmlspecialchars($_POST['username']);
+					$email = htmlspecialchars($_POST['email']);
+					$password = htmlspecialchars($_POST['password']);
 		 
 					// check if user is already existed
-					if ($db->isUserExisted($email)) {
+					
+				$query=$fssdb->prepare(" SELECT * FROM fss_users where email = :email ");
+				$query->bindValue(':email', $email, PDO::PARAM_STR);
+				$query->execute();	
+				$qdata=$query->fetch();
+					
+					if ($qdata['email'] == $email) {
 						// user is already existed - error response
 						$data['success'] = false;
-						$data["message"] = " Ce nom d'utilisateur existe deja ! ";
-						$errors['tag'] = " Ce nom d'utilisateur existe deja ! .";
+						$data["message"] = " Cette email d'identification existe deja ! ";
+						$errors['tag'] = " Cet email d'identification existe deja ! .";
 						$data['errors']  = $errors;
 						
 						
@@ -143,16 +155,30 @@ if (isset($_POST['tag']) && $_POST['tag'] != '')
 					else
 					{
 						// store user
-						$user = $db->storeUser($name, $email, $password);
-						if ($user) 
+				
+				
+                $uuid = uniqid('fss_u', true);
+				$encrypted_password = password_hash($password, PASSWORD_DEFAULT); // encrypted password
+				$regday = date("Y-m-j");
+				$type_user= 'admin';
+				
+                $query=$fssdb->prepare('INSERT INTO fss_users (unique_id,username,email,password,create_time,type_user) VALUES (:uuid, :username, :email, :encrypted_password, :regday, :type_user) ');
+				$query->bindValue(':uuid', $uuid, PDO::PARAM_STR);
+				$query->bindValue(':username', $username, PDO::PARAM_STR);
+				$query->bindValue(':email', $email, PDO::PARAM_STR);
+				$query->bindValue(':encrypted_password', $encrypted_password, PDO::PARAM_STR);
+				$query->bindValue(':regday', $regday, PDO::PARAM_STR);
+				$query->bindValue(':type_user', $type_user, PDO::PARAM_STR);
+				
+						if ($query->execute()) 
 						{
+							$qdata = $query->fetch();
 							// user stored successfully
-							
-							$data["uid"] = $user["unique_id"];
-							$data["user"]["name"] = $user["name"];
-							$data["user"]["email"] = $user["email"];
-							$data["user"]["created_at"] = $user["created_at"];
-							$data["user"]["updated_at"] = $user["updated_at"];
+						    	
+							$data["uid"] = $qdata["unique_id"];
+							$data["user"]["username"] = $qdata["username"];
+							$data["user"]["email"] = $qdata["email"];
+							$data["user"]["create_time"] = $qdata["create_time"];
 							$data['success'] = true;
 					        $data['message'] = 'Inscription Reussie !';
 							$data["error"] = false;
@@ -160,6 +186,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '')
 						}
 						else 
 						{
+							
+							
 							// user failed to store
 							$data['success'] = false ;
 							$data["message"] = " Erreur lors de votre inscription veuillez ressayez ultérieurement ";

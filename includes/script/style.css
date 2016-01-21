@@ -6,13 +6,40 @@
  * Licensed under MIT 
  * Based on Bootstrap v3.3.4
 */
+
+a.back-to-top {
+	display: none;
+	width: 50px;
+	height: 50px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #00c5ff url("up-arrow3.png") no-repeat center 45%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+ 
+  
+ 
+.back-to-top i {
+  font-size: 60px;
+}
+
+#mynavbar{
+	
+}
+
+
 #userbutton{
 display: inline-block;
 margin-left : 20%;
 width : 160px ;
-
  
 }
+
 #userbutton2{
 display: inline-block;
 margin-left : 40%;
@@ -171,6 +198,7 @@ html {
 }
 body {
   margin: 0;
+  
 }
 article,
 aside,

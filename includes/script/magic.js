@@ -1,5 +1,37 @@
 $(document).ready(function() {
-
+	
+						//	================== Link Hover Effect ===============================
+	var	sfHover = function() {
+			var sfEls =
+			document.getElementById("menu").getElementsByTagName("LI");
+			for (var i=0; i<sfEls.length; i++) 
+			{
+				sfEls[i].onmouseover = function() {
+				this.className+=" sfhover";
+				}
+				sfEls[i].onmouseout = function() {
+				this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+				}
+			}
+};
+	if (window.attachEvent)
+	{
+		window.attachEvent("onload", sfHover);
+	}
+						//	================== Back to Top ===============================
+		$('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+		var amountScrolled = 500;
+		$(window).scroll(function() {
+			if ( $(window).scrollTop() > amountScrolled ) {
+				$('a.back-to-top').fadeIn('slow');
+			} else {
+				$('a.back-to-top').fadeOut('slow');
+			}
+		});
+		$('a.back-to-top').click(function() {
+			$('html, body').animate({ scrollTop: 0}, 700);
+			return false;
+});
 
 						//  ==================  Connexion Processing   ===================
 // process the form
@@ -48,9 +80,7 @@ $('#connexionform').submit(function(event) {
       // add the error class to show a red input
       // add the error message to the help block under the input
       if ( ! data.success) {
-		  
-		  console.log(data);
-		  
+		 
 		  $(".ajax_spinner").remove();
 		  $(".ajax_wait").remove();
 		  
@@ -66,20 +96,42 @@ $('#connexionform').submit(function(event) {
         }
 		
 		$('#messages').addClass('alert alert-danger alert-dismissable').append('<p>' + data.message + '</p>');
+		
+		var date = new Date();
+        date.setTime(date.getTime ()+(1*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+		
+		document.cookie = 'is_successful_login='+false+expires ;
 
-      } else {
-		  
-		   console.log(data);
-		   
-		  
+      }
+	  else 
+	  {
+		
+
         // if validation is good add success message
         $('#messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
 		
 		$('#connexion-modal').modal('hide');
+		var days = 1;
+		
+		/*
+		if(true)
+		{
+			days = 365 ;
+		}
+		*/
+		
+		var date = new Date();
+        date.setTime(date.getTime ()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+		
+		document.cookie = 'is_successful_login='+true+expires ;
+		document.cookie = 'session_id='+data.uid+expires;
+		document.cookie = 'session_remember='+false+expires;
 		
 		
 	
-    setTimeout(function(){ window.location='http://fssheav.azurewebsites.net/signedindex.php';
+    setTimeout(function(){ window.location='http://localhost:90/Sitefaculte/index.php';
 				}, 4000);
 	
       }
@@ -143,8 +195,6 @@ $('#inscriptionform').submit(function(event) {
       // add the error message to the help block under the input
       if ( ! data.success) {
 		  
-		  console.log(data);
-		  
 		  $(".ajax_spinner").remove();
 		  $(".ajax_wait").remove();
 		 
@@ -164,20 +214,39 @@ $('#inscriptionform').submit(function(event) {
         }
 		
 		$('#reg_messages').addClass('alert alert-danger alert-dismissable').append('<p>' + data.message + '</p>');
+		
+		var date = new Date();
+        date.setTime(date.getTime ()+(1*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+		
+		document.cookie = 'is_successful_login='+false+expires ;
 
       } else {
-		  
-		    console.log(data);
-		   
-		 
+		
         // if validation is good add success message
         $('#reg_messages').addClass('alert alert-success').append('<p>' + data.message + '</p>');
 		
 		$('#inscription-modal').modal('hide');
+		var days = 1;
+		
+		/*
+		if(true)
+		{
+			days = 365 ;
+		}
+		*/
+		
+		var date = new Date();
+        date.setTime(date.getTime ()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+		
+		document.cookie = 'is_successful_login='+true+expires ;
+		document.cookie = 'session_id='+data.uid+expires;
+		document.cookie = 'session_remember='+false+expires;
 		
 		
 	
-    setTimeout(function(){ window.location='http://fssheav.azurewebsites.net/signedindex.php';
+    setTimeout(function(){ window.location='http://localhost:90/Sitefaculte/index.php';
 				}, 4000);
 	
       }

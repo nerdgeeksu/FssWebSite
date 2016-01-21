@@ -1,4 +1,4 @@
- <footer class="section section-primary ">
+<footer class="section section-primary ">
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
@@ -47,7 +47,7 @@
             </div>
           </div>
         </div>
-        <small>Copyright Heavenerd Inc 2015 Tous droits reservés</small>
+        <small><?php echo $lang['COPYRIGHT']; ?></small>
       </div>
     </footer>
   </body>
